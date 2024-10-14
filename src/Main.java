@@ -3,32 +3,30 @@ import javax.swing.*;
 public class Main {
 
     JFrame mainFrame;
-    JTextField textField;
-    JLabel textFieldLabel;
+    MainMenu mainMenu;
+    ColumnarTranspositionEncrypter encryptionPage;
 
     public Main() {
-
         mainFrame = new JFrame("Columnar Transposition Encrypter/Decrypter");
         mainFrame.setLayout(null);
-        mainFrame.setSize(1600,900);
-        mainFrame.setLocation(150,20);
+        mainFrame.setSize(1366, 768);
+        mainFrame.setLocation(150, 20);
         mainFrame.setResizable(false);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        textFieldLabel = new JLabel("Enter text here:");
-        textFieldLabel.setBounds(50, 20, 300, 30); // x, y, width, height
-        mainFrame.add(textFieldLabel);
+        mainMenu = new MainMenu(this);
+        mainMenu.landingPage.setBounds(0, 0, 1366, 768);
+        mainFrame.add(mainMenu.landingPage);
 
-        textField = new JTextField();
-        textField.setBounds(50, 50, 300, 30); // x, y, width, height
-        mainFrame.add(textField);
+        encryptionPage = new ColumnarTranspositionEncrypter(this);
+        encryptionPage.CTEpanel.setBounds(0, 0, 1366, 768);
+        mainFrame.add(encryptionPage.CTEpanel);
+        encryptionPage.CTEpanel.setVisible(false);
 
         mainFrame.setVisible(true);
     }
 
     public static void main(String[] args) {
-
         Main startMain = new Main();
-
     }
 }
