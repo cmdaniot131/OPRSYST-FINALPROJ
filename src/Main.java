@@ -5,6 +5,7 @@ public class Main {
     JFrame mainFrame;
     MainMenu mainMenu;
     ColumnarTranspositionEncrypter encryptionPage;
+    ColumnarTranspositionDecrypter decryptionPage;
 
     public Main() {
         mainFrame = new JFrame("Columnar Transposition Encrypter/Decrypter");
@@ -20,8 +21,13 @@ public class Main {
 
         encryptionPage = new ColumnarTranspositionEncrypter(this);
         encryptionPage.CTEpanel.setBounds(0, 0, 1366, 768);
-        mainFrame.add(encryptionPage.CTEpanel);
         encryptionPage.CTEpanel.setVisible(false);
+        mainFrame.add(encryptionPage.CTEpanel);
+
+        decryptionPage = new ColumnarTranspositionDecrypter(this);
+        decryptionPage.CTDpanel.setBounds(0, 0, 1366, 768);
+        decryptionPage.CTDpanel.setVisible(false);
+        mainFrame.add(decryptionPage.CTDpanel);
 
         mainFrame.setVisible(true);
     }
