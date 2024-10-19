@@ -62,5 +62,29 @@ public class MainMenu {
             public void mouseExited(MouseEvent e) {
             }
         });
+
+        decryptButton.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                main.decryptionPage.CTDpanel.setVisible(true);
+                landingPage.setVisible(false);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
     }
 }
